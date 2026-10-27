@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ehsan Qorbani – CV</title>
+  <meta name="description" content="CV of Ehsan Qorbani Chegeni, PhD – geophysicist and scientific project coordinator in Vienna, Austria.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --card: #ffffff;
+      --text: #1d1d1f;
+      --muted: #6b6b70;
+      --accent: #2f6fde;
+      --line: #e4e4e0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121214;
+        --card: #1c1c1f;
+        --text: #ececee;
+        --muted: #9a9aa2;
+        --accent: #6d9cf0;
+        --line: #2c2c31;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 48px 16px;
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 48px;
+    }
+    header {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+    .title { color: var(--accent); font-weight: 600; margin-top: 4px; }
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      margin-top: 10px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .contact a { color: var(--muted); text-decoration: none; }
+    .contact a:hover { color: var(--accent); }
+    section { margin-top: 34px; }
+    h2 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+    }
+    .stat b { display: block; font-size: 1.5rem; color: var(--accent); }
+    .stat span { font-size: 0.82rem; color: var(--muted); }
+    .entry { margin-bottom: 22px; }
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .entry h3 { font-size: 1.05rem; font-weight: 600; }
+    .date { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+    .org { color: var(--muted); font-size: 0.95rem; }
+    ul.list { margin: 6px 0 0 18px; }
+    ul.list li { margin-bottom: 4px; }
+    .skills { display: grid; gap: 10px; }
+    .skills p b { font-weight: 600; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tags span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 12px;
+      font-size: 0.88rem;
+    }
+    .pubs li { margin-bottom: 8px; font-size: 0.93rem; }
+    .pubs a, .more a { color: var(--accent); text-decoration: none; }
+    .pubs a:hover, .more a:hover { text-decoration: underline; }
+    .more { margin-top: 10px; font-size: 0.93rem; }
+    .download {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 24px;
+    }
+    @media (max-width: 640px) {
+      main { padding: 28px 20px; }
+      header { flex-direction: column; text-align: center; }
+      .contact { justify-content: center; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      main { border: none; padding: 0; max-width: none; }
+      .download, footer { display: none; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <!-- Upload a photo named photo.jpg to the repository, or delete this line -->
+      <img src="photo.jpg" alt="Photo of Ehsan Qorbani Chegeni">
+      <div>
+        <h1>Ehsan Qorbani Chegeni, PhD</h1>
+        <p class="title">Scientific Project Coordination · Research &amp; Proposal Management · Stakeholder Reporting</p>
+        <div class="contact">
+          <span>📍 Vienna, Austria</span>
+          <!-- TODO: replace with your real email and LinkedIn URL -->
+          <a href="mailto:your.email@example.com">✉️ your.email@example.com</a>
+          <a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a>
+          <a href="https://orcid.org/0000-0003-3961-4280">ORCID</a>
+        </div>
+        <!-- Upload your CV PDF named cv.pdf to the repository, or delete this line -->
+        <a class="download" href="cv.pdf" download>Download CV (PDF)</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Profile</h2>
+      <p>PhD natural scientist (Geophysics) with an engineering degree and 20+ years of combined experience in project management, interdisciplinary research and scientific coordination in international settings, including 9 years at a United Nations organisation, the Comprehensive Nuclear-Test-Ban Treaty Organization (CTBTO) in Vienna. I have coordinated a team of 21 analysts producing daily event bulletins for a 24/7 global monitoring network, drafted scientific and staffing reports for management and Member State audiences, convened sessions at EGU and the CTBTO Science and Technology Conference, and managed construction projects with teams of up to 100 staff.</p>
+      <div class="stats">
+        <div class="stat"><b>20+</b><span>years of experience</span></div>
+        <div class="stat"><b>9</b><span>years at CTBTO (UN)</span></div>
+        <div class="stat"><b>12</b><span>peer-reviewed papers</span></div>
+        <div class="stat"><b>347</b><span>abstracts managed as convener</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Data Analyst – Lead Analyst &amp; Team Coordinator</h3>
+          <span class="date">Nov 2017 – Oct 2026</span>
+        </div>
+        <p class="org">Monitoring and Data Analysis Section, International Data Centre, CTBTO (United Nations) · Vienna, Austria</p>
+        <ul class="list">
+          <li>Coordinated a team of 21 analysts with the Section Chief, setting weekly, monthly and long-term targets; as on-call Duty Analyst, handled alert events and special requests and delivered timely information products.</li>
+          <li>Organised the bulletin submission process and the infrasound team's workload, delivering quality-controlled bulletins from 218 global seismic, hydroacoustic and infrasound stations to Member States on schedule.</li>
+          <li>Drafted and managed scientific and staffing reports for section management covering workload, coverage and resource planning.</li>
+          <li>Represented the section (30 staff) on a 2-year task force that built a SharePoint document-management system now used across the division (approx. 80 staff); designed the section's document hierarchy.</li>
+          <li>Primary contact and senior user for testing new monitoring software and stations, turning user feedback into prioritised improvement requests.</li>
+          <li>Designed and delivered training for international analysts, including instructor roles at the Global Seismological Observation Training Course (Japan, 2024) and CTBTO waveform-analysis courses (2023–2024).</li>
+          <li>Published 4 peer-reviewed journal articles alongside operational duties.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Postdoctoral Researcher (2016–2017) · Doctoral Researcher (2011–2016)</h3>
+          <span class="date">Nov 2011 – Oct 2017</span>
+        </div>
+        <p class="org">Department of Meteorology and Geophysics, University of Vienna · Vienna, Austria</p>
+        <ul class="list">
+          <li>Managed two research projects from planning to publication, coordinating co-authors, partner institutions and timelines; secured a competitive Young Scientist Research Grant (2013).</li>
+          <li>Co-designed a seismic sensor network across the Eastern Alps for the international EASI project (Eastern Alpine Seismic Investigation), including site selection and deployment.</li>
+          <li>Published 8 peer-reviewed papers, 4 of them from the PhD thesis; taught graduate courses in the Geophysics MSc programme.</li>
+          <li>Austrian Geophysical Society (AGS) Award for Best Scientific Work (2015).</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Project Manager / Site Manager · Site Engineer</h3>
+          <span class="date">2002–2004, 2007–2011</span>
+        </div>
+        <p class="org">Kharadezh GmbH (engineering &amp; construction) · Iran</p>
+        <ul class="list">
+          <li>Led road, bridge and tunnel projects with teams of 20–100 staff and subcontractors, including a 2 km urban tunnel and a 500 m drill-and-blast tunnel; earlier Site Engineer on a dam project (2002–2004).</li>
+          <li>Managed project budgets and cost control, and prepared cost, progress and schedule reports (MS Project) for clients, design consultants and authorities, securing the required permits.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Scientific Events, Communication &amp; Service</h2>
+      <ul class="list">
+        <li><b>EGU General Assembly, Vienna (2017–2026):</b> organised and convened 9 sessions; managed calls for abstracts, reviewed and scheduled 167 abstracts, chaired sessions and promoted them on LinkedIn and X.</li>
+        <li><b>CTBTO Science and Technology Conference, Vienna (2021–2025):</b> organiser, convener and rapporteur for 3 sessions; reviewed and scheduled 180 abstracts and wrote the session scientific reports.</li>
+        <li><b>Presentations:</b> 40+ talks and posters at international conferences and workshops; Best Poster Award, SnT Conference (2017).</li>
+        <li><b>Supervision:</b> co-supervised 2 doctoral researchers (1 completed) and mentored 1 master's student.</li>
+        <li><b>Peer review:</b> Geophysical Journal International, Tectonophysics, Journal of Geodynamics, Pure and Applied Geophysics (2016–present).</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>PhD, Natural Sciences (Geophysics)</h3>
+          <span class="date">2011 – 2016</span>
+        </div>
+        <p class="org">University of Vienna, Austria</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>MSc, Geophysics</h3>
+          <span class="date">2004 – 2007</span>
+        </div>
+        <p class="org">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>BSc, Engineering (Extractive Materials Engineering)</h3>
+          <span class="date">1997 – 2002</span>
+        </div>
+        <p class="org">Isfahan, Iran</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <p><b>Project management:</b> planning, milestone and deadline tracking, budget management and cost control, progress reporting, MS Project, proposal writing</p>
+        <p><b>Collaboration &amp; outreach:</b> SharePoint (document hierarchy design and management), MS Teams, GitHub, LinkedIn and X for event promotion and scientific outreach</p>
+        <p><b>Office &amp; AI tools:</b> MS Office (advanced: Word, Excel, PowerPoint, Outlook); Microsoft Copilot and Claude for drafting, summarising and routine tasks, with human review and confidentiality safeguards</p>
+        <div class="tags">
+          <span>Python</span><span>Bash</span><span>MATLAB</span><span>SQL</span>
+          <span>ArcGIS</span><span>GMT</span><span>Linux</span><span>LaTeX</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <div class="tags">
+        <span>English – Fluent</span>
+        <span>German – B1</span>
+        <span>Persian – Native</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected Publications (first author)</h2>
+      <ul class="list pubs">
+        <li>Qorbani, E., Kolínský, P., Bianchi, I., Zigone, D. &amp; Bokelmann, G. (2022). Upper crustal structure at the KTB drilling site from ambient noise tomography. <i>Geophysical Journal International</i>, 231(2), 982–995. <a href="https://doi.org/10.1093/gji/ggac233">doi:10.1093/gji/ggac233</a></li>
+        <li>Qorbani, E., Zigone, D., Handy, M. R., Bokelmann, G. &amp; AlpArray-EASI Working Group (2020). Crustal structures beneath the Eastern and Southern Alps from ambient noise tomography. <i>Solid Earth</i>, 11, 1947–1968. <a href="https://doi.org/10.5194/se-11-1947-2020">doi:10.5194/se-11-1947-2020</a></li>
+        <li>Qorbani, E., Bokelmann, G., Kovács, I., Horváth, F. &amp; Falus, G. (2016). Deformation in the asthenospheric mantle beneath the Carpathian-Pannonian region. <i>Journal of Geophysical Research: Solid Earth</i>. <a href="https://doi.org/10.1002/2015JB012604">doi:10.1002/2015JB012604</a></li>
+        <li>Qorbani, E., Kurz, W., Bianchi, I. &amp; Bokelmann, G. (2015). Correlated crustal and mantle deformation in the Tauern Window, Eastern Alps. <i>Austrian Journal of Earth Sciences</i>, 108(1), 159–171. <a href="https://doi.org/10.17738/ajes.2015.0010">doi:10.17738/ajes.2015.0010</a></li>
+        <li>Qorbani, E., Bianchi, I. &amp; Bokelmann, G. (2015). Slab detachment under the Eastern Alps seen by seismic anisotropy. <i>Earth and Planetary Science Letters</i>, 409, 96–108. <a href="https://doi.org/10.1016/j.epsl.2014.10.049">doi:10.1016/j.epsl.2014.10.049</a></li>
+      </ul>
+      <p class="more">Recent conference contributions include <i>Global detection of volcanic activities at the International Data Centre</i> (SnT 2025) and <i>Performance variability of the hydroacoustic and infrasound IMS stations</i> (EGU 2024, <a href="https://doi.org/10.5194/egusphere-egu24-20403">doi</a>).<br>
+      Full list of 12 peer-reviewed publications: <a href="https://orcid.org/0000-0003-3961-4280">orcid.org/0000-0003-3961-4280</a></p>
+    </section>
+  </main>
+  <footer>© 2026 Ehsan Qorbani Chegeni</footer>
+</body>
+</html>
