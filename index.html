@@ -4,297 +4,608 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ehsan Qorbani – CV</title>
-  <meta name="description" content="CV of Ehsan Qorbani Chegeni, PhD – geophysicist and scientific project coordinator in Vienna, Austria.">
+  <meta name="description" content="Ehsan Qorbani Chegeni, PhD – geophysicist and scientific project coordinator in Vienna, Austria.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f7f7f5;
-      --card: #ffffff;
-      --text: #1d1d1f;
-      --muted: #6b6b70;
-      --accent: #2f6fde;
-      --line: #e4e4e0;
+      --bg: #f5f3ee;
+      --surface: #ffffff;
+      --text: #1b1f24;
+      --muted: #5f6670;
+      --line: #e3dfd6;
+      --accent: #d9622b;
+      --accent-soft: #fbe9df;
+      --hero: #0f1a24;
+      --hero-text: #e9eef2;
+      --hero-muted: #93a3b1;
+      --trace: #3fb6a8;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #121214;
-        --card: #1c1c1f;
-        --text: #ececee;
-        --muted: #9a9aa2;
-        --accent: #6d9cf0;
-        --line: #2c2c31;
+        --bg: #0e1318;
+        --surface: #161d24;
+        --text: #e6eaee;
+        --muted: #98a3ae;
+        --line: #26303a;
+        --accent: #f08a54;
+        --accent-soft: #2a1f19;
+        --hero: #0a1016;
       }
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
     body {
-      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      font-family: "Inter", system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
-      padding: 48px 16px;
+      line-height: 1.65;
+      font-size: 16px;
     }
-    main {
-      max-width: 860px;
-      margin: 0 auto;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 48px;
+    a { color: inherit; }
+
+    /* ---------- Navigation ---------- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 32px;
+      transition: background .3s, box-shadow .3s;
     }
-    header {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      padding-bottom: 28px;
-      border-bottom: 1px solid var(--line);
+    nav.scrolled {
+      background: color-mix(in srgb, var(--hero) 92%, transparent);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 0 rgba(255,255,255,.06);
     }
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
+    .brand {
+      font-family: "JetBrains Mono", monospace; font-size: .9rem;
+      color: var(--hero-text); text-decoration: none; letter-spacing: .04em;
     }
-    h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
-    .title { color: var(--accent); font-weight: 600; margin-top: 4px; }
-    .contact {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px 18px;
-      margin-top: 10px;
-      font-size: 0.92rem;
-      color: var(--muted);
+    .brand span { color: var(--trace); }
+    nav ul { display: flex; gap: 26px; list-style: none; }
+    nav ul a {
+      color: var(--hero-muted); text-decoration: none; font-size: .9rem;
+      transition: color .2s;
     }
-    .contact a { color: var(--muted); text-decoration: none; }
-    .contact a:hover { color: var(--accent); }
-    section { margin-top: 34px; }
-    h2 {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      margin-bottom: 14px;
+    nav ul a:hover { color: var(--hero-text); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative; overflow: hidden;
+      background: var(--hero); color: var(--hero-text);
+      min-height: 92vh;
+      display: flex; align-items: center;
+      padding: 120px 32px 80px;
     }
+    #traces { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .55; }
+    .hero-inner {
+      position: relative; max-width: 1100px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center;
+    }
+    .eyebrow {
+      font-family: "JetBrains Mono", monospace; font-size: .82rem;
+      color: var(--trace); letter-spacing: .14em; text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: "Fraunces", Georgia, serif; font-weight: 700;
+      font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1.04;
+      letter-spacing: -.02em; margin: 14px 0 18px;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p.lead { max-width: 620px; color: var(--hero-muted); font-size: 1.12rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 20px; border-radius: 999px; text-decoration: none;
+      font-size: .92rem; font-weight: 500; transition: transform .2s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-ghost { border: 1px solid rgba(255,255,255,.22); color: var(--hero-text); }
+    .btn-ghost:hover { background: rgba(255,255,255,.08); }
+    .portrait {
+      width: 230px; height: 230px; border-radius: 50%; object-fit: cover;
+      border: 3px solid rgba(255,255,255,.12);
+      box-shadow: 0 0 0 10px rgba(63,182,168,.08), 0 20px 50px rgba(0,0,0,.4);
+    }
+    .scroll-hint {
+      position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+      font-family: "JetBrains Mono", monospace; font-size: .75rem;
+      color: var(--hero-muted); letter-spacing: .12em;
+    }
+
+    /* ---------- Stats band ---------- */
     .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 18px;
+      max-width: 1100px; margin: -48px auto 0; position: relative; z-index: 2;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+      box-shadow: 0 18px 40px rgba(15,26,36,.08);
     }
-    .stat {
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 12px;
-      text-align: center;
+    .stat { padding: 26px 22px; text-align: center; }
+    .stat + .stat { border-left: 1px solid var(--line); }
+    .stat b {
+      display: block; font-family: "Fraunces", serif; font-size: 2.4rem;
+      color: var(--accent); line-height: 1.1;
     }
-    .stat b { display: block; font-size: 1.5rem; color: var(--accent); }
-    .stat span { font-size: 0.82rem; color: var(--muted); }
-    .entry { margin-bottom: 22px; }
-    .entry-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
+    .stat span { font-size: .86rem; color: var(--muted); }
+
+    /* ---------- Sections ---------- */
+    section { max-width: 1100px; margin: 0 auto; padding: 90px 32px 0; }
+    .section-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 34px; }
+    .section-head .num {
+      font-family: "JetBrains Mono", monospace; color: var(--accent); font-size: .9rem;
     }
-    .entry h3 { font-size: 1.05rem; font-weight: 600; }
-    .date { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
-    .org { color: var(--muted); font-size: 0.95rem; }
-    ul.list { margin: 6px 0 0 18px; }
-    ul.list li { margin-bottom: 4px; }
-    .skills { display: grid; gap: 10px; }
-    .skills p b { font-weight: 600; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .tags span {
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 3px 12px;
-      font-size: 0.88rem;
+    h2 {
+      font-family: "Fraunces", serif; font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 700; letter-spacing: -.01em;
     }
-    .pubs li { margin-bottom: 8px; font-size: 0.93rem; }
-    .pubs a, .more a { color: var(--accent); text-decoration: none; }
-    .pubs a:hover, .more a:hover { text-decoration: underline; }
-    .more { margin-top: 10px; font-size: 0.93rem; }
-    .download {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 8px 16px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
+    .section-head::after {
+      content: ""; flex: 1; height: 1px; background: var(--line); align-self: center;
     }
+
+    .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; }
+    .about p { margin-bottom: 14px; }
+    .highlights { display: grid; gap: 12px; align-content: start; }
+    .highlight {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+      padding: 16px 18px; border-left: 3px solid var(--accent);
+    }
+    .highlight b { display: block; font-size: .95rem; }
+    .highlight span { font-size: .88rem; color: var(--muted); }
+
+    /* ---------- Timeline ---------- */
+    .timeline { position: relative; padding-left: 34px; }
+    .timeline::before {
+      content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px;
+      width: 2px; background: linear-gradient(var(--accent), var(--line));
+    }
+    .job { position: relative; margin-bottom: 44px; }
+    .job::before {
+      content: ""; position: absolute; left: -34px; top: 7px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--bg); border: 3px solid var(--accent);
+    }
+    .job-date {
+      font-family: "JetBrains Mono", monospace; font-size: .8rem;
+      color: var(--accent); letter-spacing: .04em;
+    }
+    .job h3 { font-size: 1.25rem; font-weight: 600; margin: 4px 0 2px; }
+    .job .org { color: var(--muted); font-size: .95rem; margin-bottom: 12px; }
+    .job ul { list-style: none; display: grid; gap: 8px; }
+    .job li { padding-left: 20px; position: relative; }
+    .job li::before {
+      content: ""; position: absolute; left: 0; top: .72em;
+      width: 9px; height: 2px; background: var(--accent);
+    }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .badge {
+      font-size: .78rem; padding: 3px 10px; border-radius: 999px;
+      background: var(--accent-soft); color: var(--accent); font-weight: 500;
+    }
+
+    /* ---------- Cards ---------- */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+      padding: 24px; transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px); border-color: var(--accent);
+      box-shadow: 0 14px 30px rgba(15,26,36,.08);
+    }
+    .card .big {
+      font-family: "Fraunces", serif; font-size: 2.2rem; color: var(--accent); line-height: 1;
+    }
+    .card h3 { font-size: 1.05rem; margin: 10px 0 6px; }
+    .card p { font-size: .92rem; color: var(--muted); }
+    .card .meta {
+      font-family: "JetBrains Mono", monospace; font-size: .75rem;
+      color: var(--muted); margin-top: 12px; letter-spacing: .03em;
+    }
+
+    /* ---------- Education ---------- */
+    .edu { display: grid; gap: 14px; }
+    .edu-row {
+      display: grid; grid-template-columns: 130px 1fr; gap: 20px;
+      padding: 18px 0; border-bottom: 1px solid var(--line);
+    }
+    .edu-row .yr { font-family: "JetBrains Mono", monospace; font-size: .85rem; color: var(--accent); }
+    .edu-row b { display: block; }
+    .edu-row span { color: var(--muted); font-size: .93rem; }
+
+    /* ---------- Skills ---------- */
+    .skill-group h3 { font-size: 1rem; margin-bottom: 12px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      font-size: .85rem; padding: 5px 13px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--bg);
+    }
+    .lang { display: flex; justify-content: space-between; font-size: .93rem; margin-bottom: 4px; }
+    .bar { height: 6px; border-radius: 6px; background: var(--line); margin-bottom: 16px; overflow: hidden; }
+    .bar i { display: block; height: 100%; background: var(--accent); border-radius: 6px; }
+
+    /* ---------- Publications ---------- */
+    .pubs { display: grid; gap: 14px; }
+    .pub {
+      display: grid; grid-template-columns: 64px 1fr; gap: 18px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px;
+      text-decoration: none; transition: border-color .2s;
+    }
+    .pub:hover { border-color: var(--accent); }
+    .pub .yr { font-family: "Fraunces", serif; font-size: 1.4rem; color: var(--accent); }
+    .pub b { display: block; font-weight: 600; margin-bottom: 3px; }
+    .pub span { font-size: .88rem; color: var(--muted); }
+    .more-link {
+      display: inline-block; margin-top: 20px; color: var(--accent);
+      font-weight: 500; text-decoration: none;
+    }
+    .more-link:hover { text-decoration: underline; }
+
+    /* ---------- Contact ---------- */
+    .contact {
+      margin: 100px auto 0; max-width: 1100px; padding: 0 32px;
+    }
+    .contact-box {
+      background: var(--hero); color: var(--hero-text); border-radius: 20px;
+      padding: 56px 48px; text-align: center; position: relative; overflow: hidden;
+    }
+    .contact-box h2 { color: var(--hero-text); margin-bottom: 10px; }
+    .contact-box p { color: var(--hero-muted); max-width: 520px; margin: 0 auto 26px; }
+    .contact-box .hero-actions { justify-content: center; }
     footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.8rem;
-      margin-top: 24px;
+      text-align: center; padding: 40px 20px; color: var(--muted);
+      font-size: .82rem; font-family: "JetBrains Mono", monospace;
     }
-    @media (max-width: 640px) {
-      main { padding: 28px 20px; }
-      header { flex-direction: column; text-align: center; }
-      .contact { justify-content: center; }
-      .stats { grid-template-columns: repeat(2, 1fr); }
+
+    /* ---------- Reveal on scroll ---------- */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
     }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 860px) {
+      nav ul { display: none; }
+      nav { padding: 14px 20px; }
+      .hero { padding: 110px 20px 90px; min-height: auto; }
+      .hero-inner { grid-template-columns: 1fr; text-align: left; }
+      .portrait { width: 140px; height: 140px; order: -1; }
+      .stats { grid-template-columns: repeat(2, 1fr); margin: -40px 16px 0; }
+      .stat:nth-child(3) { border-left: none; }
+      .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+      section { padding: 70px 20px 0; }
+      .about { grid-template-columns: 1fr; }
+      .edu-row { grid-template-columns: 1fr; gap: 4px; }
+      .contact { padding: 0 16px; }
+      .contact-box { padding: 40px 22px; }
+      .scroll-hint { display: none; }
+    }
+
+    /* ---------- Print ---------- */
     @media print {
-      body { background: #fff; padding: 0; }
-      main { border: none; padding: 0; max-width: none; }
-      .download, footer { display: none; }
-      a { color: inherit; }
+      nav, #traces, .scroll-hint, .hero-actions, .contact { display: none; }
+      .hero { min-height: auto; padding: 0 0 20px; background: #fff; color: #000; }
+      .hero p.lead { color: #333; }
+      .stats { margin: 0; box-shadow: none; }
+      .reveal { opacity: 1; transform: none; }
+      section { padding-top: 30px; }
+      .card:hover, .pub:hover { transform: none; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <!-- Upload a photo named photo.jpg to the repository, or delete this line -->
-      <img src="photo.png" alt="Photo of Ehsan Qorbani Chegeni">
+
+  <nav id="nav">
+    <a class="brand" href="#top">eq<span>.</span>chegeni</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <svg id="traces" preserveAspectRatio="none" aria-hidden="true"></svg>
+    <div class="hero-inner">
       <div>
-        <h1>Ehsan Qorbani Chegeni, PhD</h1>
-        <p class="title">Scientific Project Coordination · Research &amp; Proposal Management · Stakeholder Reporting</p>
-        <div class="contact">
-          <span>📍 Vienna, Austria</span>
-          <!-- TODO: replace with your real email and LinkedIn URL -->
-          <a href="mailto:your.email@example.com">✉️ your.email@example.com</a>
-          <a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a>
-          <a href="https://orcid.org/0000-0003-3961-4280">ORCID</a>
+        <p class="eyebrow">Geophysicist · Vienna, Austria</p>
+        <h1>Ehsan Qorbani<br>Chegeni, <em>PhD</em></h1>
+        <p class="lead">Scientific project coordination, research management and stakeholder reporting, with 20+ years across a UN organisation, academia and engineering.</p>
+        <div class="hero-actions">
+          <!-- Upload your CV as cv.pdf, or delete this button -->
+          <a class="btn btn-primary" href="cv.pdf" download>↓ Download CV</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          <a class="btn btn-ghost" href="https://orcid.org/0000-0003-3961-4280" target="_blank" rel="noopener">ORCID</a>
         </div>
-        <!-- Upload your CV PDF named cv.pdf to the repository, or delete this line -->
-        <a class="download" href="cv.pdf" download>Download CV (PDF)</a>
       </div>
-    </header>
+      <!-- Upload a photo named photo.jpg, or delete this line -->
+      <img class="portrait" src="photo.jpg" alt="Portrait of Ehsan Qorbani Chegeni">
+    </div>
+    <div class="scroll-hint">SCROLL ↓</div>
+  </header>
 
-    <section>
-      <h2>Profile</h2>
-      <p>PhD natural scientist (Geophysics) with an engineering degree and 20+ years of combined experience in project management, interdisciplinary research and scientific coordination in international settings, including 9 years at a United Nations organisation, the Comprehensive Nuclear-Test-Ban Treaty Organization (CTBTO) in Vienna. I have coordinated a team of 21 analysts producing daily event bulletins for a 24/7 global monitoring network, drafted scientific and staffing reports for management and Member State audiences, convened sessions at EGU and the CTBTO Science and Technology Conference, and managed construction projects with teams of up to 100 staff.</p>
-      <div class="stats">
-        <div class="stat"><b>20+</b><span>years of experience</span></div>
-        <div class="stat"><b>9</b><span>years at CTBTO (UN)</span></div>
-        <div class="stat"><b>12</b><span>peer-reviewed papers</span></div>
-        <div class="stat"><b>347</b><span>abstracts managed as convener</span></div>
+  <div class="stats reveal">
+    <div class="stat"><b data-count="20">20</b><span>+ years of experience</span></div>
+    <div class="stat"><b data-count="9">9</b><span>years at CTBTO (UN)</span></div>
+    <div class="stat"><b data-count="12">12</b><span>peer-reviewed papers</span></div>
+    <div class="stat"><b data-count="347">347</b><span>abstracts managed as convener</span></div>
+  </div>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="reveal">
+    <div class="section-head"><span class="num">01</span><h2>About</h2></div>
+    <div class="about">
+      <div>
+        <p>I'm a PhD natural scientist in geophysics with an engineering degree and more than 20 years of combined experience in project management, interdisciplinary research and scientific coordination in international settings.</p>
+        <p>For 9 years I worked at the Comprehensive Nuclear-Test-Ban Treaty Organization (CTBTO), a United Nations organisation in Vienna, where I coordinated a team of 21 analysts producing daily event bulletins for a 24/7 global monitoring network, and drafted scientific and staffing reports for management and Member State audiences.</p>
+        <p>Before that, I managed research projects at the University of Vienna and led construction projects with teams of up to 100 staff, responsible for budgets, cost control and permits.</p>
       </div>
-    </section>
+      <div class="highlights">
+        <div class="highlight"><b>Team coordination</b><span>21 analysts, 218 global monitoring stations</span></div>
+        <div class="highlight"><b>Scientific events</b><span>12 sessions convened at EGU and SnT</span></div>
+        <div class="highlight"><b>Research</b><span>12 papers, 5 as first author; 2 PhD researchers co-supervised</span></div>
+        <div class="highlight"><b>Awards</b><span>AGS Best Scientific Work 2015 · SnT Best Poster 2017</span></div>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Experience</h2>
+  <!-- ===== Experience ===== -->
+  <section id="experience" class="reveal">
+    <div class="section-head"><span class="num">02</span><h2>Experience</h2></div>
+    <div class="timeline">
 
-      <div class="entry">
-        <div class="entry-head">
-          <h3>Data Analyst – Lead Analyst &amp; Team Coordinator</h3>
-          <span class="date">Nov 2017 – Oct 2026</span>
-        </div>
-        <p class="org">Monitoring and Data Analysis Section, International Data Centre, CTBTO (United Nations) · Vienna, Austria</p>
-        <ul class="list">
-          <li>Coordinated a team of 21 analysts with the Section Chief, setting weekly, monthly and long-term targets; as on-call Duty Analyst, handled alert events and special requests and delivered timely information products.</li>
-          <li>Organised the bulletin submission process and the infrasound team's workload, delivering quality-controlled bulletins from 218 global seismic, hydroacoustic and infrasound stations to Member States on schedule.</li>
-          <li>Drafted and managed scientific and staffing reports for section management covering workload, coverage and resource planning.</li>
-          <li>Represented the section (30 staff) on a 2-year task force that built a SharePoint document-management system now used across the division (approx. 80 staff); designed the section's document hierarchy.</li>
-          <li>Primary contact and senior user for testing new monitoring software and stations, turning user feedback into prioritised improvement requests.</li>
-          <li>Designed and delivered training for international analysts, including instructor roles at the Global Seismological Observation Training Course (Japan, 2024) and CTBTO waveform-analysis courses (2023–2024).</li>
-          <li>Published 4 peer-reviewed journal articles alongside operational duties.</li>
+      <div class="job">
+        <span class="job-date">NOV 2017 – OCT 2026</span>
+        <h3>Lead Analyst &amp; Team Coordinator</h3>
+        <p class="org">International Data Centre, CTBTO (United Nations) · Vienna</p>
+        <ul>
+          <li>Coordinated a team of 21 analysts with the Section Chief, setting weekly, monthly and long-term targets; as on-call Duty Analyst, handled alert events and delivered timely information products.</li>
+          <li>Organised the bulletin submission process, delivering quality-controlled bulletins from 218 global seismic, hydroacoustic and infrasound stations to Member States on schedule.</li>
+          <li>Drafted scientific and staffing reports for section management on workload, coverage and resource planning.</li>
+          <li>Represented the section on a 2-year task force that built a SharePoint document system now used division-wide (approx. 80 staff).</li>
+          <li>Senior user for testing new monitoring software and stations; trained international analysts, including as instructor in Japan (2024).</li>
         </ul>
+        <div class="badges">
+          <span class="badge">Team leadership</span><span class="badge">Reporting</span>
+          <span class="badge">Quality control</span><span class="badge">Training</span>
+        </div>
       </div>
 
-      <div class="entry">
-        <div class="entry-head">
-          <h3>Postdoctoral Researcher (2016–2017) · Doctoral Researcher (2011–2016)</h3>
-          <span class="date">Nov 2011 – Oct 2017</span>
-        </div>
-        <p class="org">Department of Meteorology and Geophysics, University of Vienna · Vienna, Austria</p>
-        <ul class="list">
-          <li>Managed two research projects from planning to publication, coordinating co-authors, partner institutions and timelines; secured a competitive Young Scientist Research Grant (2013).</li>
-          <li>Co-designed a seismic sensor network across the Eastern Alps for the international EASI project (Eastern Alpine Seismic Investigation), including site selection and deployment.</li>
-          <li>Published 8 peer-reviewed papers, 4 of them from the PhD thesis; taught graduate courses in the Geophysics MSc programme.</li>
-          <li>Austrian Geophysical Society (AGS) Award for Best Scientific Work (2015).</li>
+      <div class="job">
+        <span class="job-date">NOV 2011 – OCT 2017</span>
+        <h3>Postdoctoral &amp; Doctoral Researcher</h3>
+        <p class="org">Department of Meteorology and Geophysics, University of Vienna</p>
+        <ul>
+          <li>Managed two research projects from planning to publication, coordinating co-authors, partner institutions and timelines.</li>
+          <li>Secured a competitive Young Scientist Research Grant (2013).</li>
+          <li>Co-designed a seismic sensor network across the Eastern Alps for the international EASI project.</li>
+          <li>Published 8 peer-reviewed papers and taught graduate courses in the Geophysics MSc programme.</li>
         </ul>
+        <div class="badges">
+          <span class="badge">Research management</span><span class="badge">Grants</span>
+          <span class="badge">Teaching</span>
+        </div>
       </div>
 
-      <div class="entry">
-        <div class="entry-head">
-          <h3>Project Manager / Site Manager · Site Engineer</h3>
-          <span class="date">2002–2004, 2007–2011</span>
-        </div>
-        <p class="org">Kharadezh GmbH (engineering &amp; construction) · Iran</p>
-        <ul class="list">
-          <li>Led road, bridge and tunnel projects with teams of 20–100 staff and subcontractors, including a 2 km urban tunnel and a 500 m drill-and-blast tunnel; earlier Site Engineer on a dam project (2002–2004).</li>
-          <li>Managed project budgets and cost control, and prepared cost, progress and schedule reports (MS Project) for clients, design consultants and authorities, securing the required permits.</li>
+      <div class="job">
+        <span class="job-date">2002 – 2004 · 2007 – 2011</span>
+        <h3>Project Manager / Site Manager</h3>
+        <p class="org">Kharadezh GmbH, engineering &amp; construction · Iran</p>
+        <ul>
+          <li>Led road, bridge and tunnel projects with teams of 20–100 staff, including a 2 km urban tunnel and a 500 m drill-and-blast tunnel.</li>
+          <li>Managed budgets and cost control; reported cost, progress and schedule (MS Project) to clients and authorities, securing permits.</li>
+          <li>Earlier: Site Engineer on a dam project (2002–2004).</li>
         </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Scientific Events, Communication &amp; Service</h2>
-      <ul class="list">
-        <li><b>EGU General Assembly, Vienna (2017–2026):</b> organised and convened 9 sessions; managed calls for abstracts, reviewed and scheduled 167 abstracts, chaired sessions and promoted them on LinkedIn and X.</li>
-        <li><b>CTBTO Science and Technology Conference, Vienna (2021–2025):</b> organiser, convener and rapporteur for 3 sessions; reviewed and scheduled 180 abstracts and wrote the session scientific reports.</li>
-        <li><b>Presentations:</b> 40+ talks and posters at international conferences and workshops; Best Poster Award, SnT Conference (2017).</li>
-        <li><b>Supervision:</b> co-supervised 2 doctoral researchers (1 completed) and mentored 1 master's student.</li>
-        <li><b>Peer review:</b> Geophysical Journal International, Tectonophysics, Journal of Geodynamics, Pure and Applied Geophysics (2016–present).</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <div class="entry">
-        <div class="entry-head">
-          <h3>PhD, Natural Sciences (Geophysics)</h3>
-          <span class="date">2011 – 2016</span>
-        </div>
-        <p class="org">University of Vienna, Austria</p>
-      </div>
-      <div class="entry">
-        <div class="entry-head">
-          <h3>MSc, Geophysics</h3>
-          <span class="date">2004 – 2007</span>
-        </div>
-        <p class="org">Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran</p>
-      </div>
-      <div class="entry">
-        <div class="entry-head">
-          <h3>BSc, Engineering (Extractive Materials Engineering)</h3>
-          <span class="date">1997 – 2002</span>
-        </div>
-        <p class="org">Isfahan, Iran</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <div class="skills">
-        <p><b>Project management:</b> planning, milestone and deadline tracking, budget management and cost control, progress reporting, MS Project, proposal writing</p>
-        <p><b>Collaboration &amp; outreach:</b> SharePoint (document hierarchy design and management), MS Teams, GitHub, LinkedIn and X for event promotion and scientific outreach</p>
-        <p><b>Office &amp; AI tools:</b> MS Office (advanced: Word, Excel, PowerPoint, Outlook); Microsoft Copilot and Claude for drafting, summarising and routine tasks, with human review and confidentiality safeguards</p>
-        <div class="tags">
-          <span>Python</span><span>Bash</span><span>MATLAB</span><span>SQL</span>
-          <span>ArcGIS</span><span>GMT</span><span>Linux</span><span>LaTeX</span>
+        <div class="badges">
+          <span class="badge">Budgets</span><span class="badge">Cost control</span>
+          <span class="badge">Stakeholders</span>
         </div>
       </div>
-    </section>
 
-    <section>
-      <h2>Languages</h2>
-      <div class="tags">
-        <span>English – Fluent</span>
-        <span>German – B1</span>
-        <span>Persian – Native</span>
+    </div>
+  </section>
+
+  <!-- ===== Events ===== -->
+  <section id="events" class="reveal">
+    <div class="section-head"><span class="num">03</span><h2>Events &amp; Outreach</h2></div>
+    <div class="cards">
+      <div class="card">
+        <div class="big">9</div>
+        <h3>EGU General Assembly</h3>
+        <p>Proposed, organised and chaired sessions; reviewed and scheduled 167 abstracts; promoted sessions on LinkedIn and X.</p>
+        <div class="meta">VIENNA · 2017–2026</div>
       </div>
-    </section>
+      <div class="card">
+        <div class="big">3</div>
+        <h3>CTBTO SnT Conference</h3>
+        <p>Organiser, convener and rapporteur; reviewed 180 abstracts, coordinated speakers, wrote session scientific reports.</p>
+        <div class="meta">VIENNA · 2021–2025</div>
+      </div>
+      <div class="card">
+        <div class="big">40+</div>
+        <h3>Talks &amp; posters</h3>
+        <p>At international conferences and workshops, including a Best Poster Award at SnT 2017.</p>
+        <div class="meta">INTERNATIONAL</div>
+      </div>
+      <div class="card">
+        <div class="big">3</div>
+        <h3>Mentoring</h3>
+        <p>Co-supervised 2 doctoral researchers (1 completed) and mentored 1 master's student. Peer reviewer for 4 journals.</p>
+        <div class="meta">2016 – PRESENT</div>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Selected Publications (first author)</h2>
-      <ul class="list pubs">
-        <li>Qorbani, E., Kolínský, P., Bianchi, I., Zigone, D. &amp; Bokelmann, G. (2022). Upper crustal structure at the KTB drilling site from ambient noise tomography. <i>Geophysical Journal International</i>, 231(2), 982–995. <a href="https://doi.org/10.1093/gji/ggac233">doi:10.1093/gji/ggac233</a></li>
-        <li>Qorbani, E., Zigone, D., Handy, M. R., Bokelmann, G. &amp; AlpArray-EASI Working Group (2020). Crustal structures beneath the Eastern and Southern Alps from ambient noise tomography. <i>Solid Earth</i>, 11, 1947–1968. <a href="https://doi.org/10.5194/se-11-1947-2020">doi:10.5194/se-11-1947-2020</a></li>
-        <li>Qorbani, E., Bokelmann, G., Kovács, I., Horváth, F. &amp; Falus, G. (2016). Deformation in the asthenospheric mantle beneath the Carpathian-Pannonian region. <i>Journal of Geophysical Research: Solid Earth</i>. <a href="https://doi.org/10.1002/2015JB012604">doi:10.1002/2015JB012604</a></li>
-        <li>Qorbani, E., Kurz, W., Bianchi, I. &amp; Bokelmann, G. (2015). Correlated crustal and mantle deformation in the Tauern Window, Eastern Alps. <i>Austrian Journal of Earth Sciences</i>, 108(1), 159–171. <a href="https://doi.org/10.17738/ajes.2015.0010">doi:10.17738/ajes.2015.0010</a></li>
-        <li>Qorbani, E., Bianchi, I. &amp; Bokelmann, G. (2015). Slab detachment under the Eastern Alps seen by seismic anisotropy. <i>Earth and Planetary Science Letters</i>, 409, 96–108. <a href="https://doi.org/10.1016/j.epsl.2014.10.049">doi:10.1016/j.epsl.2014.10.049</a></li>
-      </ul>
-      <p class="more">Recent conference contributions include <i>Global detection of volcanic activities at the International Data Centre</i> (SnT 2025) and <i>Performance variability of the hydroacoustic and infrasound IMS stations</i> (EGU 2024, <a href="https://doi.org/10.5194/egusphere-egu24-20403">doi</a>).<br>
-      Full list of 12 peer-reviewed publications: <a href="https://orcid.org/0000-0003-3961-4280">orcid.org/0000-0003-3961-4280</a></p>
-    </section>
-  </main>
-  <footer>© 2026 Ehsan Qorbani Chegeni</footer>
+  <!-- ===== Education ===== -->
+  <section id="education" class="reveal">
+    <div class="section-head"><span class="num">04</span><h2>Education</h2></div>
+    <div class="edu">
+      <div class="edu-row"><span class="yr">2011 – 2016</span><div><b>PhD, Natural Sciences (Geophysics)</b><span>University of Vienna, Austria</span></div></div>
+      <div class="edu-row"><span class="yr">2004 – 2007</span><div><b>MSc, Geophysics</b><span>Institute for Advanced Studies in Basic Sciences (IASBS), Zanjan, Iran</span></div></div>
+      <div class="edu-row"><span class="yr">1997 – 2002</span><div><b>BSc, Engineering (Extractive Materials Engineering)</b><span>Isfahan, Iran</span></div></div>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section id="skills" class="reveal">
+    <div class="section-head"><span class="num">05</span><h2>Skills</h2></div>
+    <div class="cards">
+      <div class="card skill-group">
+        <h3>Project management</h3>
+        <div class="chips">
+          <span class="chip">Planning</span><span class="chip">Milestones</span><span class="chip">Budgets</span>
+          <span class="chip">Cost control</span><span class="chip">Progress reporting</span>
+          <span class="chip">MS Project</span><span class="chip">Proposal writing</span>
+        </div>
+      </div>
+      <div class="card skill-group">
+        <h3>Collaboration &amp; outreach</h3>
+        <div class="chips">
+          <span class="chip">SharePoint</span><span class="chip">MS Teams</span><span class="chip">GitHub</span>
+          <span class="chip">MS Office (advanced)</span><span class="chip">LinkedIn &amp; X</span>
+          <span class="chip">Copilot &amp; Claude</span>
+        </div>
+      </div>
+      <div class="card skill-group">
+        <h3>Data &amp; science</h3>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">Bash</span><span class="chip">MATLAB</span>
+          <span class="chip">SQL</span><span class="chip">ArcGIS</span><span class="chip">GMT</span>
+          <span class="chip">Linux</span><span class="chip">LaTeX</span>
+        </div>
+      </div>
+      <div class="card skill-group">
+        <h3>Languages</h3>
+        <div class="lang"><span>Persian</span><span>Native</span></div>
+        <div class="bar"><i style="width:100%"></i></div>
+        <div class="lang"><span>English</span><span>Fluent</span></div>
+        <div class="bar"><i style="width:92%"></i></div>
+        <div class="lang"><span>German</span><span>B1</span></div>
+        <div class="bar"><i style="width:50%"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Publications ===== -->
+  <section id="publications" class="reveal">
+    <div class="section-head"><span class="num">06</span><h2>Selected Publications</h2></div>
+    <div class="pubs">
+      <a class="pub" href="https://doi.org/10.1093/gji/ggac233" target="_blank" rel="noopener">
+        <span class="yr">2022</span>
+        <div><b>Upper crustal structure at the KTB drilling site from ambient noise tomography</b>
+        <span>Qorbani, Kolínský, Bianchi, Zigone &amp; Bokelmann · Geophysical Journal International</span></div>
+      </a>
+      <a class="pub" href="https://doi.org/10.5194/se-11-1947-2020" target="_blank" rel="noopener">
+        <span class="yr">2020</span>
+        <div><b>Crustal structures beneath the Eastern and Southern Alps from ambient noise tomography</b>
+        <span>Qorbani, Zigone, Handy, Bokelmann &amp; AlpArray-EASI Working Group · Solid Earth</span></div>
+      </a>
+      <a class="pub" href="https://doi.org/10.1002/2015JB012604" target="_blank" rel="noopener">
+        <span class="yr">2016</span>
+        <div><b>Deformation in the asthenospheric mantle beneath the Carpathian-Pannonian region</b>
+        <span>Qorbani, Bokelmann, Kovács, Horváth &amp; Falus · JGR: Solid Earth</span></div>
+      </a>
+      <a class="pub" href="https://doi.org/10.17738/ajes.2015.0010" target="_blank" rel="noopener">
+        <span class="yr">2015</span>
+        <div><b>Correlated crustal and mantle deformation in the Tauern Window, Eastern Alps</b>
+        <span>Qorbani, Kurz, Bianchi &amp; Bokelmann · Austrian Journal of Earth Sciences</span></div>
+      </a>
+      <a class="pub" href="https://doi.org/10.1016/j.epsl.2014.10.049" target="_blank" rel="noopener">
+        <span class="yr">2015</span>
+        <div><b>Slab detachment under the Eastern Alps seen by seismic anisotropy</b>
+        <span>Qorbani, Bianchi &amp; Bokelmann · Earth and Planetary Science Letters</span></div>
+      </a>
+    </div>
+    <a class="more-link" href="https://orcid.org/0000-0003-3961-4280" target="_blank" rel="noopener">Full list of 12 publications on ORCID →</a>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <div class="contact reveal" id="contact">
+    <div class="contact-box">
+      <h2>Let's talk</h2>
+      <p>Open to roles in scientific coordination, research management and international project delivery.</p>
+      <div class="hero-actions">
+        <!-- TODO: replace with your real email and LinkedIn URL -->
+        <a class="btn btn-primary" href="mailto:your.email@example.com">✉ Email me</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://orcid.org/0000-0003-3961-4280" target="_blank" rel="noopener">ORCID</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2026 Ehsan Qorbani Chegeni · Vienna</footer>
+
+  <script>
+    // Navigation background on scroll
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', onScroll); onScroll();
+
+    // Reveal sections and count up numbers when they come into view
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('visible');
+        e.target.querySelectorAll('[data-count]').forEach(el => {
+          if (reduce) return;
+          const end = +el.dataset.count, t0 = performance.now(), dur = 1400;
+          const step = t => {
+            const p = Math.min((t - t0) / dur, 1);
+            el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
+            if (p < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        });
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Seismograph traces in the header
+    const svg = document.getElementById('traces');
+    const NS = 'http://www.w3.org/2000/svg';
+    function drawTraces() {
+      svg.innerHTML = '';
+      const W = svg.clientWidth || 1200, H = svg.clientHeight || 700;
+      svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+      const rows = 7;
+      for (let r = 0; r < rows; r++) {
+        const y0 = H * (r + 0.6) / rows;
+        const onset = W * (0.35 + r * 0.045);     // wave arrives later at each "station"
+        const amp = H / rows * (0.25 + Math.random() * 0.2);
+        let d = `M0 ${y0}`;
+        for (let x = 0; x <= W; x += 3) {
+          let y = (Math.random() - 0.5) * 3;       // background noise
+          if (x > onset) {
+            const t = (x - onset) / 60;
+            y += amp * Math.exp(-t * 0.35) * Math.sin(t * 5.5) * (0.6 + Math.random() * 0.4);
+          }
+          d += ` L${x} ${(y0 + y).toFixed(1)}`;
+        }
+        const p = document.createElementNS(NS, 'path');
+        p.setAttribute('d', d);
+        p.setAttribute('fill', 'none');
+        p.setAttribute('stroke', r === 3 ? '#d9622b' : '#3fb6a8');
+        p.setAttribute('stroke-width', r === 3 ? '1.6' : '1');
+        p.setAttribute('opacity', r === 3 ? '0.9' : String(0.25 + r * 0.06));
+        svg.appendChild(p);
+        if (!reduce) {
+          const len = p.getTotalLength();
+          p.style.strokeDasharray = len;
+          p.style.strokeDashoffset = len;
+          p.animate([{ strokeDashoffset: len }, { strokeDashoffset: 0 }],
+                    { duration: 3500 + r * 250, easing: 'ease-out', fill: 'forwards' });
+        }
+      }
+    }
+    drawTraces();
+    let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawTraces, 250); });
+  </script>
 </body>
 </html>
